@@ -1,0 +1,94 @@
+// Font families
+$font-family-poppins: 'Poppins',
+sans-serif;
+$font-family-base: $font-family-poppins;
+
+
+// Font weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Font sizes
+$font-size-xxs: 1rem;
+$font-size-xs: 1.2rem;
+$font-size-sm: 1.44rem;
+$font-size-base: 1.6rem;
+$font-size-md: 2.074rem;
+$font-size-lg: 2.488rem;
+$font-size-xl: 2.986rem;
+
+// Line heights
+$line-height-sm: 1.25;
+$line-height-base: 1.5;
+
+// Colors
+$color-brand-100:#D9DCF5;
+$color-brand-200:#B7BBEB;
+$color-brand-300:#8287C4;
+$color-brand-400:#50548A;
+$color-brand-500:#1B1D3D;
+$color-brand-600:#131534;
+
+$color-primary-100:#D9E9FE;
+$color-primary-200:#B4D2FE;
+$color-primary-300:#8EB8FC;
+$color-primary-400:#71A1FA;
+$color-primary-500:#437CF8;
+$color-primary-600:#305FD5;
+$color-primary-700:#2145B2;
+$color-primary-800:#15308F;
+$color-primary-900:#0C2077;
+
+$color-secondary-100:#DAFEF0;
+$color-secondary-200:#B5FDE8;
+$color-secondary-300:#90F9E4;
+$color-secondary-400:#73F4E5;
+$color-secondary-500:#46EEE9;
+$color-secondary-600:#33C3CC;
+$color-secondary-700:#2397AB;
+$color-secondary-800:#166E8A;
+$color-secondary-900:#0D5172;
+
+$color-light-100:#f2f2f2;
+$color-light-200:#e6e6e6;
+$color-light-300:#d9d9d9;
+$color-light-400:#cccccc;
+$color-light-500:#c0c0c0;
+$color-light-600:#b3b3b3;
+$color-light-700:#a6a6a6;
+$color-light-800:#999999;
+$color-light-900:#808080;
+
+$color-white: #ffffff;
+
+// Container
+$container-width: 132.8rem;
+
+// Spacing
+$spacing-xs: 0.4rem;
+$spacing-sm: .8rem;
+$spacing-base: 1rem;
+$spacing-md: 2.4rem;
+$spacing-lg: 3.2rem;
+$spacing-xl: 4rem;
+$spacing-xxl: 4.8rem;
+
+// Breakpoints
+$breakpoint-mobile-sm: 320;
+$breakpoint-mobile: 540;
+$breakpoint-tablet-sm: 768;
+$breakpoint-tablet: 1024;
+$breakpoint-laptop: 1200;
+$breakpoint-desktop: 1800;
+
+// Border radius
+$border-radius-default: .8rem;
+
+// Box shadow
+$box-shadow: .1rem .1rem .6rem rgba(67, 124, 248, 0.25);
+
+@import 'mixins/breakpoints.scss';
+@import 'mixins/typography.scss';

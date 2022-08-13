@@ -1,0 +1,68 @@
+// Responsive media queries
+// Use -up media queries when possible for efficient use of css
+// For basic media queries only use tablet-up to create simplicity
+@mixin mobile-sm-up {
+  @media (min-width: #{$breakpoint-mobile-sm}px) {
+    @content;
+  }
+}
+
+@mixin mobile-up {
+  @media (min-width: #{$breakpoint-mobile}px) {
+    @content;
+  }
+}
+
+@mixin mobile-down {
+  @media (max-width: #{$breakpoint-mobile - 1}px) {
+    @content;
+  }
+}
+
+@mixin tablet-sm-up {
+  @media (min-width: #{$breakpoint-tablet-sm}px) {
+    @content;
+  }
+}
+
+@mixin tablet-sm-down {
+  @media (max-width: #{$breakpoint-tablet-sm - 1}px) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: #{$breakpoint-tablet}px) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media (max-width: #{$breakpoint-tablet - 1}px) {
+    @content;
+  }
+}
+
+@mixin laptop-up {
+  @media (min-width: #{$breakpoint-laptop}px) {
+    @content;
+  }
+}
+
+@mixin laptop-down {
+  @media (max-width: #{$breakpoint-laptop - 1}px) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: #{$breakpoint-desktop}px) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @media (max-width: #{$breakpoint-desktop - 1}px) {
+    @content;
+  }
+}

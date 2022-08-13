@@ -1,0 +1,107 @@
+@mixin type-h1-desktop {
+  font-size: $font-size-xl;
+  font-family: $font-family-base;
+}
+
+@mixin type-h1-mobile {
+  font-size: $font-size-lg;
+  font-family: $font-family-base;
+}
+
+@mixin type-h1 {
+  @include type-h1-mobile;
+
+  @include tablet-sm-up {
+    @include type-h1-desktop;
+  }
+}
+
+@mixin type-h2-desktop {
+  font-size: $font-size-lg;
+  font-family: $font-family-base;
+}
+
+@mixin type-h2-mobile {
+  font-size: $font-size-md;
+  font-family: $font-family-base;
+}
+
+@mixin type-h2 {
+  @include type-h2-mobile;
+
+  @include tablet-sm-up {
+    @include type-h2-desktop;
+  }
+}
+
+@mixin type-h3-desktop {
+  font-size: $font-size-md;
+  font-family: $font-family-base;
+}
+
+@mixin type-h3-mobile {
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+}
+
+@mixin type-h3 {
+  @include type-h3-mobile;
+
+  @include tablet-sm-up {
+    @include type-h3-desktop;
+  }
+}
+
+@mixin type-h4-desktop {
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+}
+
+@mixin type-h4-mobile {
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+}
+
+@mixin type-h5-desktop {
+  font-size: $font-size-sm;
+  font-family: $font-family-base;
+}
+
+@mixin type-h4 {
+  @include type-h4-mobile;
+
+  @include tablet-sm-up {
+    @include type-h4-desktop;
+  }
+}
+
+@mixin type-h5-mobile {
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+}
+
+@mixin type-h5 {
+  @include type-h5-mobile;
+
+  @include tablet-sm-up {
+    @include type-h5-desktop;
+  }
+}
+
+@mixin type-h6-desktop {
+  font-size: $font-size-xs;
+  font-family: $font-family-base;
+}
+
+@mixin type-h6-mobile {
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+}
+
+@mixin type-h6 {
+  @include type-h6-mobile;
+
+  @include tablet-sm-up {
+    @include type-h6-desktop;
+  }
+}
