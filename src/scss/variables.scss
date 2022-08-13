@@ -25,13 +25,6 @@ $line-height-sm: 1.25;
 $line-height-base: 1.5;
 
 // Colors
-$color-brand-100:#D9DCF5;
-$color-brand-200:#B7BBEB;
-$color-brand-300:#8287C4;
-$color-brand-400:#50548A;
-$color-brand-500:#1B1D3D;
-$color-brand-600:#131534;
-
 $color-primary-100:#D9E9FE;
 $color-primary-200:#B4D2FE;
 $color-primary-300:#8EB8FC;
@@ -41,16 +34,26 @@ $color-primary-600:#305FD5;
 $color-primary-700:#2145B2;
 $color-primary-800:#15308F;
 $color-primary-900:#0C2077;
+$color-primary-hover: $color-primary-800;
 
-$color-secondary-100:#DAFEF0;
-$color-secondary-200:#B5FDE8;
-$color-secondary-300:#90F9E4;
-$color-secondary-400:#73F4E5;
-$color-secondary-500:#46EEE9;
-$color-secondary-600:#33C3CC;
-$color-secondary-700:#2397AB;
-$color-secondary-800:#166E8A;
-$color-secondary-900:#0D5172;
+$color-secondary-100:#D9DCF5;
+$color-secondary-200:#B7BBEB;
+$color-secondary-300:#8287C4;
+$color-secondary-400:#50548A;
+$color-secondary-500:#1B1D3D;
+$color-secondary-600:#131534;
+$color-secondary-hover: $color-secondary-400;
+
+$color-tertiary-100:#DAFEF0;
+$color-tertiary-200:#B5FDE8;
+$color-tertiary-300:#90F9E4;
+$color-tertiary-400:#73F4E5;
+$color-tertiary-500:#46EEE9;
+$color-tertiary-600:#33C3CC;
+$color-tertiary-700:#2397AB;
+$color-tertiary-800:#166E8A;
+$color-tertiary-900:#0D5172;
+$color-tertiary-hover: $color-tertiary-800;
 
 $color-light-100:#f2f2f2;
 $color-light-200:#e6e6e6;
@@ -63,18 +66,22 @@ $color-light-800:#999999;
 $color-light-900:#808080;
 
 $color-white: #ffffff;
+$color-body-dark: $color-secondary-600;
+$color-body-light: $color-white;
 
 // Container
 $container-width: 132.8rem;
 
 // Spacing
-$spacing-xs: 0.4rem;
-$spacing-sm: .8rem;
-$spacing-base: 1rem;
+$spacing-xxs: 0.4rem;
+$spacing-xs: .8rem;
+$spacing-sm: 1.2rem;
+$spacing-base: 1.6rem;
 $spacing-md: 2.4rem;
 $spacing-lg: 3.2rem;
 $spacing-xl: 4rem;
 $spacing-xxl: 4.8rem;
+$spacing-3xl: 5.6rem;
 
 // Breakpoints
 $breakpoint-mobile-sm: 320;
