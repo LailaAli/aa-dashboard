@@ -1,0 +1,31 @@
+@import 'scss/variables.scss';
+
+$levels: "1"$font-size-xl $line-height-base $font-size-lg $line-height-sm,
+"2"$font-size-lg $line-height-base $font-size-lg $line-height-sm,
+"3"$font-size-md $line-height-base $font-size-md $line-height-sm,
+"4"$font-size-base $line-height-sm $font-size-base $line-height-sm,
+"5"$font-size-sm $line-height-sm $font-size-base $line-height-sm,
+"6"$font-size-xs $line-height-sm $font-size-base $line-height-sm;
+
+@each $level,
+$font-size,
+$line-height,
+$font-size-mobile,
+$line-height-mobile in $levels {
+  .h#{$level} {
+    font-weight: $font-weight-medium;
+    font-size: #{$font-size-mobile};
+    line-height: #{$line-height-mobile};
+    color: $color-brand-400;
+    margin: 0;
+
+    @include tablet-sm-up {
+      font-size: #{$font-size};
+      line-height: #{$line-height};
+    }
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
