@@ -1,0 +1,140 @@
+@import 'scss/variables.scss';
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 1px;
+  border-radius: 4rem;
+  background-color: $color-primary-600;
+  color: $color-white;
+  font-weight: $font-weight-regular;
+  padding: $spacing-xs $spacing-xl;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: linear .2s;
+
+  &:hover {
+    background-color: $color-primary-hover;
+  }
+
+  &.disabled {
+    background-color: $color-primary-200;
+    cursor: not-allowed;
+  }
+
+  &.variant-secondary {
+    background-color: $color-secondary-500;
+    color: $color-tertiary-500;
+
+    &:hover {
+      background-color: $color-secondary-hover;
+    }
+
+    &.disabled {
+      background-color: $color-light-300;
+      color: $color-white;
+      cursor: not-allowed;
+    }
+  }
+
+  &.variant-tertiary {
+    background-color: $color-tertiary-500;
+    color: $color-body-dark;
+
+    &:hover {
+      background-color: $color-tertiary-hover;
+      color: $color-body-light;
+    }
+
+    &.disabled {
+      background-color: $color-tertiary-100;
+      color: $color-light-900;
+      cursor: not-allowed;
+    }
+  }
+
+  &.variant-outline {
+    border-color: $color-primary-600;
+    background-color: transparent;
+    color: $color-primary-600;
+
+    &:hover {
+      border-color: transparent;
+      background-color: $color-primary-200;
+      color: $color-body-dark;
+    }
+
+    &.disabled {
+      background-color: $color-light-300;
+      border-color: transparent;
+      color: $color-white;
+      cursor: not-allowed;
+    }
+  }
+
+  &.variant-link {
+    background-color: transparent;
+    color: $color-primary-600;
+
+    &:hover {
+      background-color: $color-primary-100;
+    }
+
+    &.disabled {
+      color: $color-light-700;
+      cursor: not-allowed;
+    }
+  }
+
+  &.size-sm {
+    font-size: $font-size-sm;
+    padding: $spacing-xxs $spacing-lg;
+
+    svg {
+      height: $font-size-base;
+      width: $font-size-base;
+    }
+  }
+
+  &.size-md {
+    padding: $spacing-xs $spacing-xl;
+
+    svg {
+      height: $font-size-md;
+      width: $font-size-md;
+    }
+  }
+
+  &.size-lg {
+    padding: $spacing-xs $spacing-3xl;
+
+    svg {
+      height: $font-size-md;
+      width: $font-size-md;
+    }
+  }
+
+  .contentItem {
+    display: inline-flex;
+  }
+
+  .icon {
+    margin-left: $spacing-xs;
+  }
+
+  &.icon-left {
+    flex-direction: row-reverse;
+
+    .icon {
+      margin-left: 0;
+      margin-right: $spacing-xs;
+    }
+  }
+
+  &.block {
+    width: 100%;
+  }
+}
