@@ -1,0 +1,11 @@
+@import 'scss/variables.scss';
+
+.tooltip {
+  background-color: $color-secondary-500;
+  border-radius: $border-radius-sm;
+  padding: $spacing-xs $spacing-base;
+  color: $color-white;
+  font-size: $font-size-sm;
+  max-width: 20rem;
+  z-index: 999;
+}

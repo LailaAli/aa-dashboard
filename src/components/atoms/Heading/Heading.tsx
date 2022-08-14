@@ -5,7 +5,7 @@ import css from "./Heading.module.scss";
 
 const cx = classNames.bind( css );
 
-type LevelVariants = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+export type LevelVariants = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 type HeadingProps = {
   className?: string;
@@ -17,7 +17,7 @@ type HeadingProps = {
 const Heading = ({
   children,
   className = "",
-  level,
+  level = "h1",
   size = level,
   uppercase,
   ...rest

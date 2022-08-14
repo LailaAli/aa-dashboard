@@ -72,6 +72,14 @@ $color-body-light: $color-white;
 // Container
 $container-width: 132.8rem;
 
+// Size
+$size-xxs: 0.4rem;
+$size-xs: .8rem;
+$size-sm: 1.2rem;
+$size-base: 1.6rem;
+$size-md: 2.4rem;
+$size-lg: 3.2rem;
+
 // Spacing
 $spacing-xxs: 0.4rem;
 $spacing-xs: .8rem;
@@ -92,6 +100,7 @@ $breakpoint-laptop: 1200;
 $breakpoint-desktop: 1800;
 
 // Border radius
+$border-radius-sm: .4rem;
 $border-radius-default: .8rem;
 
 // Box shadow

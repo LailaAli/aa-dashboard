@@ -1,0 +1,38 @@
+@import 'scss/variables.scss';
+
+.infoCard {
+  border-top: $size-xs solid;
+  border-color: $color-primary-500;
+  border-radius: $border-radius-default;
+  box-shadow: $box-shadow;
+  padding: $spacing-md $spacing-md $spacing-lg;
+
+  .subtitle {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-regular;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    color: $color-light-900;
+  }
+
+  .title {
+    color: $color-secondary-500;
+    letter-spacing: .075rem;
+  }
+
+  .button {
+    margin-top: $spacing-lg;
+  }
+
+  &.primary {
+    border-color: $color-primary-500;
+  }
+
+  &.secondary {
+    border-color: $color-secondary-500;
+  }
+
+  &.tertiary {
+    border-color: $color-tertiary-500;
+  }
+}

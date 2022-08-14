@@ -1,0 +1,10 @@
+@import 'scss/variables.scss';
+
+.sidebar {
+
+  background-color: $color-secondary-500;
+  height: 100vh;
+  flex: 1;
+  max-width: 24.1rem;
+  padding: $spacing-xxl $spacing-sm;
+}

@@ -137,4 +137,24 @@
   &.block {
     width: 100%;
   }
+
+  &.variant-icon {
+    background-color: transparent;
+    color: $color-primary-600;
+    border-radius: $border-radius-default;
+    padding: $spacing-xxs;
+
+    &:hover {
+      background-color: $color-primary-100;
+    }
+
+    .icon {
+      margin: 0;
+    }
+
+    svg {
+      height: 3.2rem;
+      width: 3.2rem;
+    }
+  }
 }

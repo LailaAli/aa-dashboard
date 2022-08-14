@@ -1,0 +1,60 @@
+@import 'scss/variables.scss';
+
+.infoListItem {
+  background-color: $color-light-200;
+  padding: $spacing-base;
+  border-radius: $border-radius-default;
+  margin: $spacing-base 0;
+
+  .iconRow {
+    display: flex;
+  }
+
+  .icon {
+    line-height: 0;
+    margin-right: $spacing-xs;
+  }
+
+  .displayIcon {
+    line-height: 0;
+    margin-right: $spacing-xs;
+    margin-bottom: -$spacing-xs;
+    transform: translateY(-$spacing-xs);
+  }
+
+  .strikethrough {
+    color: $color-light-900;
+  }
+
+  .link {
+    display: inline-flex;
+    margin-left: $spacing-sm;
+    color: $color-primary-600;
+
+    &:hover {
+      color: $color-primary-300
+    }
+
+    svg {
+      height: $font-size-xl;
+      width: $font-size-xl;
+    }
+  }
+
+  .title {
+    font-weight: $font-weight-medium;
+
+    &.urlAlignment {
+      transform: translateY($spacing-xxs);
+    }
+  }
+
+  .description {
+    margin-bottom: 0;
+    font-size: $font-size-sm;
+
+    &.iconTrue {
+      padding-left: $spacing-lg;
+    }
+  }
+}

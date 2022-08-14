@@ -30,11 +30,11 @@ const Button = ({ariaLabel, block, children, className, disabled, icon, iconPlac
           block,
           disabled,
           "icon-left": iconPlacement === "left",
-          "icon-only": icon && !children,
         }
       )}
     >
-      {children && <span className={css.contentItem}>{children}</span>}
+      {/* TODO: Handle edge case if variant === 'icon' but icon is not passed */}
+      {variant !== 'icon' && <span className={css.contentItem}>{children}</span>}
       {icon && <span className={cx(css.icon, css.contentItem)}>{icon}</span>}
     </button>
   );

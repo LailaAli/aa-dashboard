@@ -1,0 +1,11 @@
+@import 'scss/variables.scss';
+
+.dashboard {
+  display: flex;
+
+  .contentContainer {
+    background-color: $color-primary-100;
+    padding: $spacing-xxl $spacing-lg;
+    flex: 2;
+  }
+}

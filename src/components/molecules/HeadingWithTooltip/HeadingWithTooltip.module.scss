@@ -1,0 +1,17 @@
+@import 'scss/variables.scss';
+
+.headingWithTooltip {
+  display: flex;
+
+  .tooltip {
+    height: 1.4rem;
+    margin-left: $size-xs;
+    cursor: pointer;
+  }
+
+  svg {
+    color: $color-secondary-400;
+    height: 1.4rem;
+    width: 1.4rem;
+  }
+}

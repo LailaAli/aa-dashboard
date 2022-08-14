@@ -1,4 +1,4 @@
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'outline' | 'link';
+export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'outline' | 'link' | 'icon';
 
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
