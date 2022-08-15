@@ -1,0 +1,200 @@
+@import 'scss/variables.scss';
+
+$color-ultra-black: #1B1D3D;
+$color-ultra-black-80: #323456;
+$color-gray-10: #E2E1E1;
+$color-gray-70: #707070;
+$color-bright-blue-100: #437CF8;
+$color-ultra-blue-160: #090CBD;
+$color-teal-100: #45EEE9;
+$letter-spacing: .1rem;
+
+
+.ssClaimCard {
+  background-color: $color-white;
+  border: 1px solid $color-gray-10;
+  box-shadow: -.2rem .6rem 1rem rgba(0, 0, 0, 0.12);
+  max-width: 42rem;
+
+  .infoContainer {
+    padding: .8rem 2.4rem 3.2rem 2.4rem;
+  }
+
+  .cardTitle {
+    font-weight: $font-weight-bold;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    text-align: center;
+    letter-spacing: $letter-spacing;
+    color: $color-ultra-black;
+  }
+
+  .subtitle {
+    font-weight: $font-weight-medium;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: $color-ultra-black;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    gap: 1.2rem;
+
+    @include tablet-sm-up {
+      justify-content: space-between;
+    }
+  }
+
+  .legendLabel {
+    display: flex;
+    align-items: center;
+
+    .colorIndicator {
+      display: inline-flex;
+      border-radius: 50%;
+      height: .8rem;
+      width: .8rem;
+      background-color: $color-ultra-blue-160;
+      margin-right: .5rem;
+
+      &.secondary {
+        background-color: $color-bright-blue-100;
+      }
+    }
+
+    .key {
+      font-weight: 500;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      color: $color-ultra-black;
+    }
+  }
+
+  .divider {
+    height: .2rem;
+    background-color: $color-gray-10;
+    margin: 1.6rem 0 .8rem 0;
+  }
+
+  .inputRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3.5rem;
+
+    .label {
+      font-weight: 500;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      color: $color-ultra-black-80;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .fieldContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.8rem;
+
+    .selectLabel {
+      font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      color: $color-ultra-black;
+    }
+
+    .selectField {
+      width: 15.4rem;
+    }
+  }
+
+  .ageCol {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: .8rem;
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      opacity: 1;
+    }
+
+    .ageInput {
+      border: none;
+      border-bottom: 1.5px solid $color-gray-70;
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      letter-spacing: $letter-spacing;
+      color: $color-gray-70;
+      max-width: 12rem;
+    }
+  }
+
+  .paymentCol {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: .4rem;
+
+    .payValue {
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      text-align: center;
+      letter-spacing: $letter-spacing;
+      color: $color-gray-70;
+    }
+  }
+
+  .buttonRow {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+
+    button {
+      border-width: .1rem;
+      border-style: solid;
+      border-color: transparent;
+      border-radius: 2rem;
+      padding: .7rem 3.1rem;
+      text-align: center;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      letter-spacing: $letter-spacing;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      @include tablet-sm-up {
+        width: unset;
+      }
+    }
+
+    .buttonSecondary {
+      background: $color-white;
+      border-color: $color-ultra-black;
+      border-radius: 2rem;
+      color: $color-ultra-black;
+    }
+
+    .buttonPrimary {
+      background: $color-ultra-black;
+      color: $color-teal-100;
+      margin-bottom: 1.6rem;
+
+      @include tablet-sm-up {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

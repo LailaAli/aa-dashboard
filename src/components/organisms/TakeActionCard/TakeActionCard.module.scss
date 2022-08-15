@@ -1,0 +1,13 @@
+@import 'scss/variables.scss';
+
+.contentContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+
+  @include tablet-sm-up {
+    width: unset;
+  }
+}

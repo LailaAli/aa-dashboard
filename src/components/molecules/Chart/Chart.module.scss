@@ -1,0 +1,129 @@
+@import 'scss/variables.scss';
+
+.donutChart {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+
+  .slice {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .chartCenter {
+    position: absolute;
+    border-radius: 50%;
+
+    span {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+@mixin donutChart($class, $perc, $size, $width, $base, $center, $color) {
+
+  $color2: $color;
+  $base2: $base;
+  $deg: ($perc/100*360)+deg;
+  $deg1: 90deg;
+  $deg2: $deg;
+
+  // If percentage is less than 50%
+  @if $perc < 50 {
+    $base: $color;
+    $color: $base2;
+    $color2: $base2;
+    $deg1: ($perc/100*360+90)+deg;
+    $deg2: 0deg;
+  }
+
+  .chartContainer {
+    position: relative;
+    width: fit-content;
+
+    .tag {
+      position: absolute;
+      background-color: $color-white;
+      border: 0.5px solid #939292;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      text-align: center;
+      letter-spacing: 0.5px;
+      color: #000000;
+      padding: .5rem 1.2rem;
+      max-width: 5.4rem;
+    }
+
+    .tagPrimary {
+      top: 1.6rem
+    }
+
+    .tagSecondary {
+      right: 0;
+      bottom: 2.4rem;
+    }
+  }
+
+  .donutChart {
+    &#{$class} {
+      width: $size;
+      height: $size;
+      background: $base;
+
+      .slice {
+        &.one {
+          clip: rect(0 $size $size/2 0);
+          -webkit-transform: rotate($deg1);
+          transform: rotate($deg1);
+          background: $color;
+        }
+
+        &.two {
+          clip: rect(0 $size/2 $size 0);
+          -webkit-transform: rotate($deg2);
+          transform: rotate($deg2);
+          background: $color2;
+        }
+      }
+
+      .chartCenter {
+        top: $width;
+        left: $width;
+        width: $size - ($width * 2);
+        height: $size - ($width * 2);
+        background: $center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .label {
+          font-weight: 500;
+          font-size: 1.2rem;
+          line-height: 1.8rem;
+          text-align: center;
+          color: #7C7C7C;
+        }
+
+        .value {
+          font-weight: 700;
+          font-size: 2rem;
+          line-height: 3.2rem;
+          text-align: center;
+          letter-spacing: .1rem;
+          color: $color-secondary-500;
+        }
+      }
+    }
+  }
+}
+
+@include donutChart('.chart', 60, 18rem, 1.4rem, #437CF8, $color-white, #090CBD);

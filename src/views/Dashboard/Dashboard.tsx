@@ -15,30 +15,42 @@ import Button from "components/atoms/Button";
 import Heading from "components/atoms/Heading";
 import InfoListItem from "components/atoms/InfoListItem";
 import InfoCard from "components/organisms/InfoCard";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import SSClaimCard from "components/organisms/SSClaimCard";
+import TakeActionCard from "components/organisms/TakeActionCard";
 
 const cx = classNames.bind(css);
 
-interface OptionsProps {
-  household_income: number;
-  full_name: string;
+interface Option {
+  value: number;
+  label: string;
 }
 
-const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
-];
-
 const Dashboard = () => {
+  const [options, setOptions] = useState<Option[]>([]);
+  const memberId = 15;
+  const secondMemberId = 2;
+
+  const fetchBothMembers = async () => {
+    const [firstMemberRespons, secondMemberResponse] = await Promise.all([
+      fetch(`/users/${memberId}`),
+      fetch(`/users/${secondMemberId}`),
+    ]);
+    const firstMember = await firstMemberRespons.json();
+    const secondMember = await secondMemberResponse.json();
+
+    return [firstMember, secondMember];
+  };
+
   useEffect(() => {
-    fetch("/users/2")
-      .then((resp) => {
-        console.log(resp);
-        console.log("======success=======");
+    const result = fetchBothMembers()
+      .then(([firstMember, secondMember]) => {
+        setOptions([
+          { value: memberId, label: firstMember.user_info.full_name },
+          { value: secondMemberId, label: secondMember.user_info.full_name },
+        ]);
       })
       .catch((err) => {
-        console.log("======failure=======");
         console.log(err);
       });
   }, []);
@@ -46,44 +58,28 @@ const Dashboard = () => {
   return (
     <div className={css.dashboard}>
       <Sidebar></Sidebar>
-      <div className={css.contentContainer}>
-        <Row gutter={[16, 16]}>
-          <Col span={6}>
+      <section className={css.contentPanel}>
+        {/* <SSClaimCard options={options} /> */}
+        <section className={css.pageHeaderRow}>
+          <div>
             <HeadingWithTooltip
               headingLevel="h1"
               title="Overview"
               tooltipText="Description of section"
             />
-          </Col>
-          <Col span={6}>
+          </div>
+          <div>
             <NotificationIcon />
             <span className={css.search}>
               <SearchIcon /> Search
             </span>
-          </Col>
-        </Row>
-        <Row gutter={[24, 32]}>
-          <Col span={16}>
-            <Card>
-              <HeadingWithTooltip
-                title="take action"
-                tooltipText="Description of section"
-                uppercase
-              />
-              <Col span={12}>
-                <Heading level="h3">Best Social Security Claimed Age</Heading>
-                <label htmlFor="members">Household Memeber</label>
-                <Select id="members" options={options} />
-
-                <Button ariaLabel="button">Learn more</Button>
-              </Col>
-              <Col span={12}>
-                <Heading level="h2">Best Social Security Claimed Age</Heading>
-                <Button ariaLabel="button">Learn more</Button>
-              </Col>
-            </Card>
-          </Col>
-          <Col span={16}>
+          </div>
+        </section>
+        <section className={css.cardsSection}>
+          {/* <div className={cx(css.dasboardCard)}> */}
+          <TakeActionCard options={options} className={css.takeActionaCard} />
+          {/* </div> */}
+          <div className={cx(css.dashboardCard)}>
             <Card>
               <div className={css.profilePic}>ProfilePic</div>
               <p>Sarah Smith</p>
@@ -98,10 +94,10 @@ const Dashboard = () => {
               </div>
               <Button ariaLabel="button">Edit profile</Button>
             </Card>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
+          </div>
+        </section>
+        <section className={cx(css.cardsSection)}>
+          <div>
             <Card>
               <HeadingWithTooltip
                 title="to do list"
@@ -116,8 +112,8 @@ const Dashboard = () => {
                 title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit"
               />
             </Card>
-          </Col>
-          <Col>
+          </div>
+          <div>
             <Card>
               <HeadingWithTooltip
                 title="Example of empty state"
@@ -127,17 +123,17 @@ const Dashboard = () => {
               <p>No updates here</p>
               <p>Here's a dog having a drink</p>
             </Card>
-          </Col>
-        </Row>
-        <Row>
+          </div>
+        </section>
+        <section className={cx(css.cardsSection)}>
           <Card>
             <HeadingWithTooltip
               title="recommended for you"
               tooltipText="description of section"
             />
             <span>buttons</span>
-            <Row>
-              <Col span={12}>
+            <div>
+              <div>
                 <InfoCard
                   title="Choose the right plan with Athena"
                   variant="secondary"
@@ -191,11 +187,11 @@ const Dashboard = () => {
                     targetUrl="#"
                   />
                 </InfoCard>
-              </Col>
-            </Row>
+              </div>
+            </div>
           </Card>
-        </Row>
-      </div>
+        </section>
+      </section>
     </div>
   );
 };

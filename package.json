@@ -2,12 +2,7 @@
   "name": "aa-dashboard",
   "version": "0.1.0",
   "private": true,
-  "proxy": {
-    "/users": {
-      "target": "https://pgf7hywzb5.execute-api.us-east-1.amazonaws.com:3000",
-      "changeOrigin": true
-    }
-  },
+  "proxy": "https://pgf7hywzb5.execute-api.us-east-1.amazonaws.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",

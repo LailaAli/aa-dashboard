@@ -3,9 +3,37 @@
 .dashboard {
   display: flex;
 
-  .contentContainer {
+  .contentPanel {
     background-color: $color-primary-100;
     padding: $spacing-xxl $spacing-lg;
     flex: 2;
+  }
+
+  .pageHeaderRow {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cardsSection {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+
+    &:not(:last-child) {
+      margin-bottom: $spacing-lg;
+    }
+
+    @include tablet-up {
+      flex-direction: row;
+    }
+  }
+
+  .dashboardCard {
+    flex: 1;
+  }
+
+  .takeActionaCard {
+    flex: 1;
   }
 }
