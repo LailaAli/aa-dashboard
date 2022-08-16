@@ -1,13 +1,139 @@
 @import 'scss/variables.scss';
 
+.heading {
+  margin-top: $spacing-md;
+}
+
 .contentContainer {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   gap: $spacing-md;
+  margin-top: $spacing-md;
 
   @include tablet-sm-up {
+    flex-direction: row;
     width: unset;
+  }
+
+  .content {
+    margin-top: $spacing-md;
+  }
+
+  .formCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1.5;
+    order: 2;
+
+    @include tablet-sm-up {
+      order: unset
+    }
+  }
+
+  .selectField {
+    width: 100%;
+  }
+
+  .select {
+    width: 100%;
+    max-width: 30rem;
+  }
+
+  .inputRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-lg;
+    align-items: stretch;
+    margin: $spacing-md 0 $spacing-lg;
+    max-width: 50rem;
+
+    @include tablet-sm-up {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  }
+
+  .value {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+  }
+
+  .ageCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+  }
+
+  .ageField {
+    border: none;
+    border-bottom: 1px solid $color-light-300;
+    width: 100%;
+
+    @include tablet-sm-up {
+      text-align: center;
+    }
+  }
+
+  .valueCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .label {
+    font-weight: $font-weight-regular;
+    display: block;
+    margin-bottom: $spacing-xs;
+  }
+
+  .buttonRow {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: $spacing-md;
+
+    @include tablet-sm-up {
+      flex-wrap: nowrap;
+    }
+
+    button {
+      width: 100%;
+
+      @include tablet-sm-up {
+        width: unset;
+      }
+    }
+  }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+
+  .chartCol {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-lg;
+
+    .legendLabel {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+
+      .colorIndicator {
+        height: $spacing-xs;
+        width: $spacing-xs;
+        background-color: $color-primary-600;
+        border-radius: 100%;
+      }
+    }
   }
 }

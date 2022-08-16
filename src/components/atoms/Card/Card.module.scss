@@ -4,6 +4,10 @@
   background-color: $color-white;
   border-radius: $border-radius-default;
   box-shadow: $box-shadow;
-  padding: $spacing-md;
+  padding: $spacing-md $spacing-base;
   width: 100%;
+
+  @include tablet-sm-up {
+    padding: $spacing-md;
+  }
 }

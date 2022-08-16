@@ -9,6 +9,7 @@ import css from "./HeadingWithTooltip.module.scss";
 interface HeadingWithTooltipProps {
   title: string;
   tooltipText: string;
+  className?: string;
   headingClassName?: string;
   headingLevel?: LevelVariants;
   uppercase?: boolean;
@@ -21,12 +22,13 @@ const cx = classNames.bind( css );
 const HeadingWithTooltip = ({
   title,
   tooltipText,
+  className,
   headingClassName,
   headingLevel = "h2",
   uppercase,
 }: HeadingWithTooltipProps) => {
   return (
-    <div className={css.headingWithTooltip}>
+    <div className={cx(css.headingWithTooltip, className)}>
       <Heading
         level={headingLevel}
         size={headingLevel}

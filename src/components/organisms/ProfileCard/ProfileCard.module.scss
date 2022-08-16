@@ -1,0 +1,41 @@
+@import 'scss/variables.scss';
+
+.profileCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .topRow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: $spacing-lg;
+  }
+
+  .profilePic {
+    margin-bottom: $spacing-md;
+  }
+
+  .title {
+    font-size: $font-size-sm;
+  }
+
+  .text {
+
+    &.ssLabel {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  .dollarAmount {
+    font-weight: $font-weight-medium;
+    margin-left: $spacing-sm;
+  }
+
+  .button {
+    margin-top: $spacing-lg;
+  }
+}

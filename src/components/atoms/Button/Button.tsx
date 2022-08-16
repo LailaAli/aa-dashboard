@@ -8,7 +8,7 @@ const cx = classNames.bind( css );
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { 
   ariaLabel: string;
   block?: boolean;
-  children?: string;
+  children?: ReactNode;
   className?: string;
   disabled?: boolean;
   icon?: ReactNode; //Normally I create an icon component

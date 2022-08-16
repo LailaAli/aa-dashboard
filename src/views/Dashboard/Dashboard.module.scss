@@ -1,17 +1,57 @@
 @import 'scss/variables.scss';
 
 .dashboard {
-  display: flex;
 
   .contentPanel {
     background-color: $color-primary-100;
-    padding: $spacing-xxl $spacing-lg;
+    padding: $spacing-md $spacing-md $spacing-md 8.6rem;
     flex: 2;
+
+    @include tablet-sm-up {
+      padding: $spacing-xxl $spacing-lg $spacing-xxl 9.4rem;
+    }
+  }
+
+  .main {
+    max-width: $container-width;
   }
 
   .pageHeaderRow {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    margin-bottom: $spacing-xxl;
+
+    @include tablet-sm-up {
+      gap: $spacing-xxl;
+      flex-direction: row;
+    }
+
+    .pageHeaderHeading {
+      flex: 2;
+    }
+
+    .headerRightCol {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: $spacing-xxl;
+      flex: 1;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+      background-color: $color-white;
+      height: $size-lg;
+      width: 100%;
+      max-width: 52rem;
+      border-radius: 4rem;
+      padding: $spacing-xs $spacing-md;
+    }
   }
 
   .cardsSection {
@@ -33,7 +73,136 @@
     flex: 1;
   }
 
-  .takeActionaCard {
+  // Take Action Section
+  .takeActionCard {
+    flex: 2;
+    order: 2;
+
+    @include tablet-up {
+      order: unset;
+    }
+  }
+
+  // To Do Card Section
+  .todoDBCard {
+    flex: 1.5;
+  }
+
+  .todoCard {
+    height: 100%;
+
+    .listContainer {
+      max-height: 26rem;
+      overflow-y: scroll;
+      padding-right: $spacing-sm;
+    }
+  }
+
+  .emptyDBCard {
     flex: 1;
+
+    .emptyCard {
+      height: 100%;
+    }
+
+    .emptyCardContent {
+      padding-top: $spacing-md;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .text {
+        text-align: center;
+        color: $color-secondary-400;
+
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+
+
+  // Recommended Section
+
+  .adviceList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: $spacing-lg;
+
+    @include tablet-up {
+      flex-direction: row;
+    }
+  }
+
+  .videoCol {
+    padding-top: $spacing-base;
+    flex: 1.5;
+  }
+
+  .videoCard {
+    text-align: center;
+    padding: 0 !important;
+  }
+
+  .videoImage {
+    width: 50vw;
+    height: auto;
+
+    @include tablet-up {
+      width: 100%;
+    }
+  }
+
+  .scrollingAdvice {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    padding: $spacing-base $spacing-xs;
+    overflow-y: scroll;
+    max-height: 44.2rem;
+
+    @include tablet-sm-up {
+      max-height: fit-content;
+      flex-direction: row;
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
+
+
+    @include tablet-up {
+      flex: 2;
+      padding: $spacing-base;
+      width: 55.2rem;
+    }
+  }
+
+  .adviceCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+
+    @include tablet-sm-up {
+      min-width: 40.2rem;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+
+  ::-webkit-scrollbar:horizontal {
+    height: $size-xs;
+  }
+
+  ::-webkit-scrollbar:vertical {
+    width: $size-xs;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: $border-radius-default;
+    background-color: $color-primary-300;
   }
 }

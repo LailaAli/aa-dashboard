@@ -1,10 +1,58 @@
 @import 'scss/variables.scss';
 
 .sidebar {
-
+  position: fixed;
   background-color: $color-secondary-500;
   height: 100vh;
-  flex: 1;
   max-width: 24.1rem;
-  padding: $spacing-xxl $spacing-sm;
+  padding: $spacing-md 0 $spacing-xl;
+
+  .main {
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    padding-right: $spacing-sm;
+    padding-left: $spacing-sm;
+  }
+
+  .navList {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    margin-top: $spacing-xl;
+
+    li {
+      padding: $spacing-xxs;
+      width: 100%;
+
+      .iconLink {
+        display: block;
+        color: $color-light-600;
+
+        svg {
+          height: $size-xl;
+          width: $size-xl;
+        }
+
+        &.active {
+          color: $color-white;
+        }
+      }
+
+      &:hover {
+        .iconLink {
+          color: $color-white;
+        }
+      }
+    }
+
+  }
+
 }
